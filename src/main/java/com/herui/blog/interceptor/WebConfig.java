@@ -12,6 +12,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
                  .addPathPatterns("/admin/**")
                  .excludePathPatterns("/admin")
                  .excludePathPatterns("/admin/login")
-                 .excludePathPatterns("/admin/logout");
+                 .excludePathPatterns("/admin/logout")
+                 .excludePathPatterns("/admin/kaptcha");
     }
 }
