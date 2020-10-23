@@ -604,10 +604,18 @@ h5,h6{font-size:1em;}
     <a href="#comment-container" class="ui teal button">留言</a>
     <button class="ui wechat icon button"><i class="weixin icon"></i></button>
     <div id="toTop-button" class="ui icon button"><i class="chevron up icon"></i></div>
+    <button  class="ui dianzan icon button">
+        <i class="thumbs up outline icon"></i>
+    </button>
+
 </div>
 
 <div id="qrcode" class="ui wechat-qr flowing popup transition hidden">
-    <!--<img src="./static/images/wechat.jpg" style="width: 150px!important;"/>-->
+<!--    <img src="./static/images/wechat.jpg" style="width: 150px!important;"/>-->
+</div>
+
+<div id="s" class="ui dianzan flowing popup transition hidden">
+        <img src="/static/images/smile.jpg" style="width: 150px!important;"/>
 </div>
 
 <div class="ui toc-container flowing popup transition hidden" style="width: 250px !important;">
@@ -637,6 +645,12 @@ h5,h6{font-size:1em;}
 
     $('.wechat').popup({
         popup : $('.wechat-qr'),
+        on : 'click',
+        position: 'left center'
+    });
+
+    $('.dianzan').popup({
+        popup : $('.dianzan'),
         on : 'click',
         position: 'left center'
     });
