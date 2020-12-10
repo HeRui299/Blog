@@ -1,6 +1,7 @@
 package com.herui.blog.pojo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,6 +15,7 @@ public class Blog {
     @Id
     @GeneratedValue // 自动生成
     private Long id;
+
     private String title;
 
     @Basic(fetch = FetchType.LAZY) // 懒加载
@@ -30,7 +32,9 @@ public class Blog {
     @Temporal(TemporalType.TIMESTAMP)
     private Date creatTime;
     @Temporal(TemporalType.TIMESTAMP)
+
     private Date updateTime;
+
     @ManyToOne
     private Type type;
     @ManyToMany(cascade = {CascadeType.PERSIST}) // 级联新增

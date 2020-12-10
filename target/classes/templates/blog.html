@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>博客详情</title>
+    <style>
+        .print{
+
+            width:250px;
+            white-space:nowrap;
+            overflow:hidden;
+            -webkit-animation: dy 3s steps(60, end) infinite;
+            animation: dy 3s steps(50, end) infinite;
+        }
+        @-webkit-keyframes dy{
+            from { width: 0;}
+        }
+        @keyframes dy{
+            from { width: 0;}
+        }
+    </style>
 </head>
 <body>
 <!--导航-->
@@ -575,7 +591,7 @@ h5,h6{font-size:1em;}
                 <input type="hidden" name="blog.id" th:value="${blog.id}"/>
                 <input type="hidden" id="ads" name="parentComment.id" value="-1"/>
                 <div class="field">
-                    <textarea name="content" placeholder="请输入评论信息。。。"></textarea>
+                    <textarea name="content" placeholder="请输入评论信息。。。" class="print"></textarea>
                 </div>
                 <div class="fields">
                     <div class="field m-mobile-wide m-margin-bottom-small">

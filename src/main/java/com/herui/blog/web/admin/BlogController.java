@@ -74,7 +74,6 @@ public class BlogController {
         if ( blog.getId()==null){
             a = blogService.saveBlog(blog);
         }else{
-            System.out.println("blog.getCreatTime() = " + blog.getCreatTime());
             a = blogService.updateBlog(blog.getId(),blog);
         }
         if (a==null){

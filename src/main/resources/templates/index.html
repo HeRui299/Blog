@@ -6,16 +6,23 @@
     <title>博客</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
     <link href="../static/css/me.css" rel="stylesheet">
+    <style>
+        .herui{
+            position: absolute;
+            left: 20px;
+            top: 100px;
+        }
+    </style>
 </head>
 <body>
+
 <!--导航-->
 <nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini"></nav>
-
 <!--中间内容-->
 <div class="m-padded-tb-big">
-    <div class="ui container">
+    <div class="ui container" style="width: 80%;">
         <div class="ui stackable grid">
-            <div class="eleven wide column">
+            <div class="nine wide column">
                 <!--header-->
                 <div class="ui top attached segment">
                     <div class="ui middle aligned two column grid">
@@ -320,7 +327,7 @@
 
             </div>
             <!--右边的TOP-->
-            <div class="five wide column">
+            <div class="four wide column">
                 <!--分类-->
                <div class="ui segments">
                    <div class="ui secondary segment">
@@ -375,6 +382,11 @@
                     <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}" class="ui rounded image">
                 </div>
             </div>
+            <div class="three wide column">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="http://music.163.com/outchain/player?type=0&id=4982804570&auto=1&height=630"></iframe>
+                <div id="he-plugin-standard"></div>
+
+            </div>
         </div>
     </div>
 </div>
@@ -383,8 +395,20 @@
 </footer>
 
 <th:block th:replace="_fragments :: script"></th:block>
-
+<script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
 <script>
+    WIDGET = {
+        CONFIG: {
+            "layout": 2,
+            "width": "230",
+            "height": "270",
+            "background": 1,
+            "dataColor": "FFFFFF",
+            "borderRadius": 5,
+            "city":"CN101250502",
+            "key": "02ee6518ab86442dbf432db1a490f771"
+        }
+    }
     $('.menu.toggle').click(function () {
         $('.m-item').toggleClass('m-mobile-hide');
     });
