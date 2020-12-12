@@ -141,7 +141,12 @@
         $("[name='published']").val(false);
         if($("#tagg").find("a").length>3){
             alert("最多选择三个标签");
-            $('a').last().remove();
+            $("#tagg").find("a").each(function (index) {
+                 if (index>2){
+                     $(this).remove();
+                     $(".menu").append('<div class="item" data-value='+$(this).text()+'>'+$(this).text()+'</div>')
+                 }
+            });
             event.preventDefault();
         }else{
             $("#blog-form").submit();

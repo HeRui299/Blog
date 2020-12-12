@@ -7,7 +7,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 //@SpringBootTest
 public class BlogApplicationTests {
     public static void main(String[] args) {
-        String zhouxiaoting = MD5Utils.code("zhouxiaoting");
-        System.out.println(zhouxiaoting);
+        int sum = 0;
+        for (int i = 1; i <= 500; i++) {
+            sum+=i;
+        }
+        System.out.println(sum);
     }
 }
