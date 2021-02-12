@@ -17,29 +17,30 @@ public class LoginAspect {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Pointcut("execution(* com.herui.blog.web..*.*(..))")
-    public void log(){
+    public void log() {
 
     }
+
     @Before("log()")
-    public void doBefore(JoinPoint joinPoint){
+    public void doBefore(JoinPoint joinPoint) {
         ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = servletRequestAttributes.getRequest();
         String url = request.getRequestURI().toString();
-        String ip =  request.getRemoteAddr();
-        String classMethod = joinPoint.getSignature().getDeclaringTypeName()+"."+joinPoint.getSignature().getName();
+        String ip = request.getRemoteAddr();
+        String classMethod = joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName();
         Object[] args = joinPoint.getArgs();
-        RequestLogs requestLogs = new RequestLogs(url,ip,classMethod,args);
-        logger.info("Request:{}",requestLogs);
+        RequestLogs requestLogs = new RequestLogs(url, ip, classMethod, args);
+        logger.info("Request:{}", requestLogs);
     }
 
     @After("log()")
-    public void doAfter(){
+    public void doAfter() {
 //        logger.info("------------doAfter----------");
     }
 
-    @AfterReturning(returning = "result",pointcut = "log()")
-    public void doAfterReturn(Object result){
-        logger.info("Result : {]" +result);
+    @AfterReturning(returning = "result", pointcut = "log()")
+    public void doAfterReturn(Object result) {
+        logger.info("Result : {]" + result);
     }
 
     private class RequestLogs {

@@ -31,7 +31,7 @@
             <div class="ui padded vertical segment m-padded-tb-large m-mobile-lr-clear" th:each="blog : ${page.content}">
                 <div class="ui mobile reversed stackable grid">
                     <div class="ui eleven wide column">
-                        <a class="ui header"  th:href="@{/blog/id(id=${blog.id})}" th:text="${blog.title}"></a>
+                        <a class="ui header"  th:href="@{/blog/{id}(id = ${blog.id})}" th:text="${blog.title}"></a>
                         <p th:text="|${blog.description}...|"></p>
                         <div class="ui stackable grid">
                             <div class="row">

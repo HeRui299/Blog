@@ -28,7 +28,7 @@
 </nav>
 <!--中间内容-->
 <div id="waypoint" class="m-container-small m-padded-tb-big">
-    <div class="ui container animated fadeIn">
+    <div class="ui container animated fadeIn" style="width: 1000px!important;">
         <div class="ui top attached segment">
             <div class="ui horizontal link list">
                 <div class="item">
@@ -47,7 +47,7 @@
             <!--图片区域-->
             <img src="https://unsplash.it/800/450?image=1005" th:src="@{${blog.firstPicture}}" alt="" class="ui fluid rounded image">
         </div>
-        <div class="ui  attached padded segment">
+        <div class="ui attached padded segment" >
             <!--内容-->
             <div class="ui right aligned basic segment">
                 <div class="ui orange basic label" th:text="${blog.flag}">原创</div>
@@ -595,11 +595,12 @@ h5,h6{font-size:1em;}
                 </div>
                 <div class="fields">
                     <div class="field m-mobile-wide m-margin-bottom-small">
-                     <div class="ui left icon input">
-                     <i class="user icon"></i>
-                    <input type="text" name="nickname" placeholder="姓名" th:value="${session.user} != null ? ${session.user.nickname}">
-                     </div>
+                         <div class="ui left icon input">
+                         <i class="user icon"></i>
+                        <input type="text" name="nickname" placeholder="姓名" th:value="${session.user} != null ? ${session.user.nickname}">
+                         </div>
                     </div>
+
                     <div class="field m-mobile-wide m-margin-bottom-small">
                         <div class="ui left icon input">
                         <i class="mail icon"></i>
@@ -756,8 +757,9 @@ h5,h6{font-size:1em;}
             "blog.id" : $("[name='blog.id']").val(),
             "nickname" : $("[name='nickname']").val(),
             "email" : $("[name='email']").val(),
-            "content" :$("[name='content']").val()
+            "content" :$("[name='content']").val(),
         },function (responseTxt,statusTxt,xhr) {
+            alert(responseTxt);
             // $(window).scrollTo($("#comment-container"),500)
             clearContent();
         });
